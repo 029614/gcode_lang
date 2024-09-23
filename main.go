@@ -16,16 +16,15 @@ func main() {
 
 		println(len(tree.Commands))
 
-		for _, command := range tree.Commands {
-			if len(command.Instructions) > 1 {
+		for i, command := range tree.Commands {
+			if i < 25 {
 				println("Command: ")
 				for _, instruction := range command.Instructions {
 					println("\tInstruction: ")
 					for _, token := range instruction.Tokens {
-						println("\t\tToken: ", string(token.Rune), token.Value)
+						println("\t\tToken: [", string(token.Rune), "] ", token.Value)
 					}
 				}
-				println("\n")
 			}
 		}
 	}

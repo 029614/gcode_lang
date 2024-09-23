@@ -58,12 +58,37 @@ func NewTree(path string) *Tree {
 
 func tokenize(text string) []Token {
 	var result []Token
-	r := '0'
+	r := '#'
 	s := ""
+	bracketDepth := 0
+	quoteCount := 0
 
 	for _, ch := range text {
+
+		// ignore stuff inside brackets, braces, and parens
+		if ch == '(' || ch == '[' || ch == '{' {
+			bracketDepth++
+			continue
+		} else if ch == ')' || ch == ']' || ch == '}' {
+			bracketDepth--
+			continue
+		} else if bracketDepth > 0 {
+			continue
+		}
+
+		// ignore stuff inside quotes
+		if ch == '"' {
+			quoteCount++
+		}
+		if quoteCount%2 == 1 {
+			continue
+		}
+
+		// ignore spaces
 		if unicode.IsSpace(ch) && ch != '\n' && ch != '\r' {
 			continue
+
+			// handle new lines and carriage returns
 		} else if ch == '\n' || ch == '\r' {
 			t, err := handleTokenization(r, s)
 			if err == nil {
@@ -71,7 +96,7 @@ func tokenize(text string) []Token {
 			}
 			result = append(result, Token{Rune: ch, Value: ""})
 			s = ""
-			r = '0'
+			r = '#'
 		} else if ch == ';' {
 			t, err := handleTokenization(r, s)
 			if err == nil {
@@ -121,7 +146,7 @@ func (t *Tree) Parse() error {
 			// new line
 			ln++
 			nl = true
-			if len(ins.Tokens) > 0 {
+			if isInstructionValid(ins) {
 				com.Instructions = append(com.Instructions, ins)
 			}
 			ins = Instruction{LineNumber: ln}
@@ -129,7 +154,7 @@ func (t *Tree) Parse() error {
 
 			if nl && (tk.Rune == 'G' || tk.Rune == 'M') { // If a new line starts with a G or M code, then a new command block has begun
 				com.LineCount = ln - com.LineNumber
-				if len(ins.Tokens) > 0 {
+				if isInstructionValid(ins) {
 					com.Instructions = append(com.Instructions, ins)
 				}
 				if len(com.Instructions) > 0 {
@@ -152,4 +177,17 @@ func (t *Tree) GetFileText() (string, error) {
 		return "", err
 	}
 	return string(data), nil
+}
+
+func isInstructionValid(ins Instruction) bool {
+	if len(ins.Tokens) == 0 {
+		return false
+	}
+	t := ins.Tokens[0].Rune
+	if unicode.IsLetter(t) {
+		return true
+	} else if t == ';' {
+		return true
+	}
+	return false
 }
