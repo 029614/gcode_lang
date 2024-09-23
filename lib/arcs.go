@@ -84,6 +84,7 @@ func CalculateRollingArc(seg1, seg2 LineSegment, cutterDiameter float64) (startX
 		fmt.Println("No intersection found.")
 		return 0, 0, 0, 0, 0, 0
 	}
+	fmt.Printf("intersectionX: (%.4f), intersectionY: (%.4f)\n", intersectionX, intersectionY)
 
 	// Calculate direction vectors for both segments
 	direction1X := seg1.EndX - seg1.StartX
@@ -91,11 +92,12 @@ func CalculateRollingArc(seg1, seg2 LineSegment, cutterDiameter float64) (startX
 	direction2X := seg2.EndX - seg2.StartX
 	direction2Y := seg2.EndY - seg2.StartY
 
-	// Normalize the direction vectors
+	// Calculate lengths of both segments
 	length1 := math.Sqrt(direction1X*direction1X + direction1Y*direction1Y)
 	length2 := math.Sqrt(direction2X*direction2X + direction2Y*direction2Y)
 	fmt.Printf("length1: (%.2f), length2: (%.2f)\n", length1, length2)
 
+	// Normalize the direction vectors
 	direction1X /= length1
 	direction1Y /= length1
 	direction2X /= length2
@@ -110,9 +112,63 @@ func CalculateRollingArc(seg1, seg2 LineSegment, cutterDiameter float64) (startX
 	endX = intersectionX + direction2X*offset
 	endY = intersectionY + direction2Y*offset
 
+	normal1X, normal1Y, normal2X, normal2Y := getSegmentsNormals(seg1, seg2)
+
 	// Calculate the center coordinates for I and J
-	i = startX + (startX+endX)*0.5
+	i = (startX - endX) * 0.5
 	j = (startY + endY) * 0.5
 
 	return startX, startY, endX, endY, i, j
+}
+
+// PointOnSegment calculates the point on a segment that is a given distance from the end of the segment.
+// The segment is defined by (startX, startY) to (endX, endY).
+func PointOnSegment(seg LineSegment, distance float64) (float64, float64) {
+	// Calculate the direction vector from start to end
+	dirX := seg.StartX - seg.EndX
+	dirY := seg.StartY - seg.EndY
+
+	// Calculate the length of the segment
+	length := math.Sqrt(dirX*dirX + dirY*dirY)
+
+	// Normalize the direction vector
+	unitDirX := dirX / length
+	unitDirY := dirY / length
+
+	// Calculate the point that is 'distance' away from the end
+	pointX := seg.EndX + unitDirX*distance
+	pointY := seg.EndY + unitDirY*distance
+
+	return pointX, pointY
+}
+
+// getSegmentsNormals calculates the normal vectors for two segments
+func getSegmentsNormals(seg1, seg2 LineSegment) (normal1X, normal1Y, normal2X, normal2Y float64) {
+	// Calculate the direction vector for segment 1
+	dir1X := seg1.EndX - seg1.StartX
+	dir1Y := seg1.EndY - seg1.StartY
+
+	// Normalize the direction vector for segment 1
+	length1 := math.Sqrt(dir1X*dir1X + dir1Y*dir1Y)
+	unitDir1X := dir1X / length1
+	unitDir1Y := dir1Y / length1
+
+	// The counterclockwise normal vector for segment 1
+	normal1X = -unitDir1Y
+	normal1Y = unitDir1X
+
+	// Calculate the direction vector for segment 2
+	dir2X := seg2.EndX - seg2.StartX
+	dir2Y := seg2.EndY - seg2.StartY
+
+	// Normalize the direction vector for segment 2
+	length2 := math.Sqrt(dir2X*dir2X + dir2Y*dir2Y)
+	unitDir2X := dir2X / length2
+	unitDir2Y := dir2Y / length2
+
+	// The counterclockwise normal vector for segment 2
+	normal2X = -unitDir2Y
+	normal2Y = unitDir2X
+
+	return normal1X, normal1Y, normal2X, normal2Y
 }
