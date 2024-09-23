@@ -1,4 +1,4 @@
-package gcode
+package lib
 
 import (
 	"errors"
