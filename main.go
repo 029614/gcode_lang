@@ -7,8 +7,8 @@ import (
 func main() {
 	println("Hello World!")
 
-	tree := gcode.NewTree("./tests/GCODE_ROSETTASTONE/nextech/__7 PrefinBirchPly_008.anc")
-	err := tree.Parse()
+	tree := gcode.Tree{}
+	err := tree.Open("./tests/GCODE_ROSETTASTONE/nextech/__7 PrefinBirchPly_008.anc")
 	if err != nil {
 		println(err.Error())
 	} else {

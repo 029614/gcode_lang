@@ -197,7 +197,9 @@ func handleTokenization(r rune, s string, state *TreeState) (Token, error) {
 	}
 }
 
-func (t *Tree) Parse() error {
+func (t *Tree) Open(filepath string) error {
+	t.Path = filepath
+
 	text, err := t.GetFileText()
 	if err != nil {
 		return err
@@ -206,8 +208,8 @@ func (t *Tree) Parse() error {
 	tokens := tokenize(text)
 	//println(len(tokens))
 
-	ln := 0
-	nl := false
+	ln := 0     // line number
+	nl := false // new line flag
 	com := Command{LineNumber: ln}
 	ins := Instruction{LineNumber: ln}
 
