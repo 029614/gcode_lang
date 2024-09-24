@@ -6,6 +6,62 @@ import (
 	"unicode"
 )
 
+type TreeState struct {
+	Parameters map[rune]string
+	Previous   *TreeState
+}
+
+func (t *TreeState) SetParameter(key rune, value string) {
+	t.Parameters[key] = value
+}
+
+func (t *TreeState) GetParameter(key rune) string {
+	// Check if the key exists in the map
+	if value, exists := t.Parameters[key]; exists {
+		return value
+	}
+	// Return "0" if the key is not found
+	return "0"
+}
+
+func (t *TreeState) HasParameter(key rune) bool {
+	_, ok := t.Parameters[key]
+	return ok
+}
+
+func (t *TreeState) Extend(parameters map[rune]string) TreeState {
+	// Create a new map to store the merged parameters
+	newParams := make(map[rune]string)
+
+	// First, copy the original parameters into the new map
+	for k, v := range t.Parameters {
+		newParams[k] = v
+	}
+
+	// Then, override with the new parameters
+	for k, v := range parameters {
+		newParams[k] = v
+	}
+
+	// Return a new TreeState with the merged parameters
+	return TreeState{
+		Parameters: newParams,
+		Previous:   t,
+	}
+}
+
+// Token Literals
+const TL_JOBSTART = "JOBSTART"         // G-code line that starts the job
+const TL_JOBEND = "JOBEND"             // G-code line that ends the job
+const TL_SPINDLESTART = "SPINDLESTART" // G-code line that starts the spindle
+const TL_SPINDLEEND = "SPINDLEEND"     // G-code line that ends the spindle
+const TL_TOOLCHANGE = "TOOLCHANGE"     // G-code line that changes the tool
+const TL_GANGON = "GANGON"             // G-code line that turns on the gang tooling
+const TL_GANGOFF = "GANGOFF"           // G-code line that turns off the gang tooling
+const TL_GANGSET = "GANGSET"           // G-code line that sets the gang tooling
+const TL_BEGINCUT = "BEGINCUT"         // G-code line that starts the cut
+const TL_ENDCUT = "ENDCUT"             // G-code line that ends the cut
+
 type TokenValue string
 
 func NewTokenValue(value string) (TokenValue, error) {
@@ -26,6 +82,7 @@ func NewTokenValue(value string) (TokenValue, error) {
 type Token struct {
 	Rune  rune
 	Value TokenValue
+	State TreeState
 }
 
 func RuneTokenFromSubstring(substring string) (Token, error) {
@@ -60,6 +117,7 @@ func tokenize(text string) []Token {
 	var result []Token
 	r := '#'
 	s := ""
+	state := TreeState{Parameters: make(map[rune]string)}
 	bracketDepth := 0
 	quoteCount := 0
 
@@ -90,24 +148,27 @@ func tokenize(text string) []Token {
 
 			// handle new lines and carriage returns
 		} else if ch == '\n' || ch == '\r' {
-			t, err := handleTokenization(r, s)
+			t, err := handleTokenization(r, s, state)
 			if err == nil {
 				result = append(result, t)
+				state = t.State
 			}
 			result = append(result, Token{Rune: ch, Value: ""})
 			s = ""
 			r = '#'
 		} else if ch == ';' {
-			t, err := handleTokenization(r, s)
+			t, err := handleTokenization(r, s, state)
 			if err == nil {
 				result = append(result, t)
+				state = t.State
 			}
 			r = ch
 			s = ""
 		} else if unicode.IsLetter(ch) && r != ';' {
-			t, err := handleTokenization(r, s)
+			t, err := handleTokenization(r, s, state)
 			if err == nil {
 				result = append(result, t)
+				state = t.State
 			}
 			r = ch
 			s = ""
@@ -118,9 +179,13 @@ func tokenize(text string) []Token {
 	return result
 }
 
-func handleTokenization(r rune, s string) (Token, error) {
+func handleTokenization(r rune, s string, state TreeState) (Token, error) {
 	if s != "" {
-		return Token{Rune: r, Value: TokenValue(s)}, nil
+		t := Token{Rune: r, Value: TokenValue(s)}
+		if TokenIsParameter(t) {
+			t.State = state.Extend(map[rune]string{r: s})
+		}
+		return t, nil
 	} else {
 		return Token{}, errors.New("empty token value")
 	}
@@ -190,4 +255,22 @@ func isInstructionValid(ins Instruction) bool {
 		return true
 	}
 	return false
+}
+
+func TokenIsParameter(token Token) bool {
+	if token.Rune == 'G' || token.Rune == 'M' {
+		return false
+	} else if unicode.IsLetter(token.Rune) {
+		return true
+	} else {
+		return false
+	}
+}
+
+func TokenIsComment(token Token) bool {
+	return token.Rune == ';'
+}
+
+func TokenIsCode(token Token) bool {
+	return token.Rune == 'G' || token.Rune == 'M'
 }
