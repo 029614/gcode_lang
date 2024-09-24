@@ -148,7 +148,7 @@ func tokenize(text string) []Token {
 
 			// handle new lines and carriage returns
 		} else if ch == '\n' || ch == '\r' {
-			t, err := handleTokenization(r, s, state)
+			t, err := handleTokenization(r, s, &state)
 			if err == nil {
 				result = append(result, t)
 				state = t.State
@@ -157,7 +157,7 @@ func tokenize(text string) []Token {
 			s = ""
 			r = '#'
 		} else if ch == ';' {
-			t, err := handleTokenization(r, s, state)
+			t, err := handleTokenization(r, s, &state)
 			if err == nil {
 				result = append(result, t)
 				state = t.State
@@ -165,7 +165,7 @@ func tokenize(text string) []Token {
 			r = ch
 			s = ""
 		} else if unicode.IsLetter(ch) && r != ';' {
-			t, err := handleTokenization(r, s, state)
+			t, err := handleTokenization(r, s, &state)
 			if err == nil {
 				result = append(result, t)
 				state = t.State
@@ -179,7 +179,7 @@ func tokenize(text string) []Token {
 	return result
 }
 
-func handleTokenization(r rune, s string, state TreeState) (Token, error) {
+func handleTokenization(r rune, s string, state *TreeState) (Token, error) {
 	if s != "" {
 		t := Token{Rune: r, Value: TokenValue(s)}
 		if TokenIsParameter(t) {
