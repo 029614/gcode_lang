@@ -1,0 +1,146 @@
+
+---TOKENS---
+
+TOKEN_START_JOB
+TOKEN_START_SPINDLE
+TOKEN_SET_SPINDLE_SPEED
+TOKEN_END_JOB
+TOKEN_SET_GANG_PATTERN
+TOKEN_SELECT_TOOL
+
+
+---STATE---
+TOOLHEAD: 1|2
+TOOL_ON: true|false
+
+
+---MULTICAM---
+
+G0
+G1
+G2
+G3
+G90 # Absolute Coordinate Mode. part of startup cycle > TOKEN_START_JOB
+
+G75 # G90/91 Mode for G02/03 Arcs. part of startup cycle > TOKEN_START_JOB
+G97 # spindle speed S18000 > TOKEN_SET_SPINDLE_SPEED
+
+G98 P147 D1 # part of shutdown sequence > TOKEN_END_JOB
+G98 P300 Dxxx # select gang drill with bit mask > TOKEN_SET_GANG_PATTERN
+
+M2 # End job without reset > TOKEN_END_JOB final command
+M5 # spindle off
+M12 # 3D device on > TOKEN_END_JOB 
+M38 # TURN GANG DRILL ON
+M48 # TURN GANG DRILL OFF
+M90 # PROGRAM START > TOKEN_START_JOB
+
+X
+Y
+Z
+T
+I
+J
+;
+
+TOKEN_START_JOB
+"""
+M90
+G90
+G75
+"""
+
+
+TOKEN_END_JOB
+"""
+M12
+M05
+G98 P147 D1
+M02
+"""
+
+
+
+
+
+---NEXTECH---
+
+G0
+G1
+G2
+G3
+G90 # absolute programming mode
+
+G17 # circular interpolation and cutter diameter compensation
+G27 # continous sequence operation with autmatic speed reduction on corners
+G40 # cutter diameter compenstation disable
+G70 # programming in inches
+G79 # programming referred to axis home switch
+G80 # disable canned cycles
+G81 # drilling cycle
+
+M3 # spindle speed s18000 > TOKEN_SET_SPINDLE_SPEED
+M5 # spindle stop > TOKEN_STOP_SPINDLE
+M6 # tool change > TOKEN_SELECT_TOOL
+M13 # spindle clockwise
+M15 # ?
+M30 # end of program
+M48 # ? part of shutdown and startup cycle
+M49 # ? part of spindle spin up cycle
+M50 # ?
+M52 # ?
+M54 # ?
+M63 # ?
+
+X
+Y
+Z
+T
+I
+J
+;
+
+
+TOKEN_START_JOB
+"""
+;(EnRoute Software)
+;(www.enroutesoftware.com)
+;SELECT PROCESS
+(GTO,PRO1,!PROC(0)=1) ;JUMP TO MAIN PROGRAM
+
+"PRO1"
+G70
+G90
+G40
+G80
+M48
+M50
+M52
+(UAO,1)
+(UTO,1,X51.0,Y12.25) ;;<<<---THIS NEEDS TO BE CALCULATED
+G80
+"""
+
+TOKEN_END_JOB
+"""
+G80
+M05
+M52
+G0 G79 Z0
+M05
+M48
+G79 Z0
+G79 G1 X5 Y5 F20000
+M30
+
+;EOF
+"""
+
+
+TOKEN_START_SPINDLE
+"""
+(DLY,3)
+M49
+G27
+G17
+"""
