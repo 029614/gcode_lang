@@ -151,7 +151,9 @@ func tokenize(text string) []Token {
 			t, err := handleTokenization(r, s, &state)
 			if err == nil {
 				result = append(result, t)
-				state = t.State
+				if TokenIsParameter(t) {
+					state = t.State
+				}
 			}
 			result = append(result, Token{Rune: ch, Value: ""})
 			s = ""
@@ -160,7 +162,9 @@ func tokenize(text string) []Token {
 			t, err := handleTokenization(r, s, &state)
 			if err == nil {
 				result = append(result, t)
-				state = t.State
+				if TokenIsParameter(t) {
+					state = t.State
+				}
 			}
 			r = ch
 			s = ""
@@ -168,7 +172,9 @@ func tokenize(text string) []Token {
 			t, err := handleTokenization(r, s, &state)
 			if err == nil {
 				result = append(result, t)
-				state = t.State
+				if TokenIsParameter(t) {
+					state = t.State
+				}
 			}
 			r = ch
 			s = ""
@@ -198,8 +204,7 @@ func (t *Tree) Parse() error {
 	}
 
 	tokens := tokenize(text)
-
-	println(len(tokens))
+	//println(len(tokens))
 
 	ln := 0
 	nl := false

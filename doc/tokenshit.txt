@@ -103,6 +103,17 @@ J
 
 TOKEN_START_JOB
 """
+;sawbox
+G70
+G90
+G40
+G80
+M48
+G17
+(UAO,1)
+"""
+enroute
+"""
 ;(EnRoute Software)
 ;(www.enroutesoftware.com)
 ;SELECT PROCESS
@@ -119,6 +130,21 @@ M52
 (UAO,1)
 (UTO,1,X51.0,Y12.25) ;;<<<---THIS NEEDS TO BE CALCULATED
 G80
+"""
+mastercam
+"""
+;program
+;NexTech
+;(PROGRAM NAME -  OLEG_9_19_24_DESKS_ANC )
+;(DATE=DD-MM-YY - 19-09-24  TIME=HH:MM - 10:50 )
+N100 G70
+N102 G0
+G17
+G90
+G40
+G80
+M48
+(UAO,1)
 """
 
 TOKEN_END_JOB
