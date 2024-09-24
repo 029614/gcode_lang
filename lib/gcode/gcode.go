@@ -55,10 +55,10 @@ const TL_JOBSTART = "JOBSTART"         // G-code line that starts the job
 const TL_JOBEND = "JOBEND"             // G-code line that ends the job
 const TL_SPINDLESTART = "SPINDLESTART" // G-code line that starts the spindle
 const TL_SPINDLEEND = "SPINDLEEND"     // G-code line that ends the spindle
-const TL_TOOLCHANGE = "TOOLCHANGE"     // G-code line that changes the tool
+const TL_TOOLCHANGE = "SPINDLETOOLSET" // G-code line that changes the tool
 const TL_GANGON = "GANGON"             // G-code line that turns on the gang tooling
 const TL_GANGOFF = "GANGOFF"           // G-code line that turns off the gang tooling
-const TL_GANGSET = "GANGSET"           // G-code line that sets the gang tooling
+const TL_GANGSET = "GANGTOOLSET"       // G-code line that sets the gang tooling
 const TL_BEGINCUT = "BEGINCUT"         // G-code line that starts the cut
 const TL_ENDCUT = "ENDCUT"             // G-code line that ends the cut
 
