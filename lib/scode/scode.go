@@ -1,84 +1,95 @@
 package scode
 
-import "errors"
+import (
+	"fmt"
+)
 
-const TOKEN_JOB_START = "JOBSTART" // G-code line that starts the job
-const TOKEN_JOB_END = "JOBEND"     // G-code line that ends the job
+type TokenID string
 
-const TOKEN_SPINDLE = "SPINDLE" // G-code line that starts the spindle
-const TOKEN_DRILL = "DRILL"     // G-code line that drills a hole
-
-const TOKEN_SLEW = "SLEW"           // G-code line that moves the machine without cutting
-const TOKEN_MACHINE = "MACHINE"     // G-code line that sets the machine parameters
-const TOKEN_ARC_CW_2D = "ARC2DCW"   // G-code line that cuts an arc in the clockwise direction
-const TOKEN_ARC_CCW_2D = "ARC2DCCW" // G-code line that cuts an arc in the counter-clockwise direction
-
-const TOKEN_COMMENT = ";" // G-code line that is a comment
-
-const TOKEN_PARAMETER_X = "X"     // G-code line that sets the X parameter
-const TOKEN_PARAMETER_Y = "Y"     // G-code line that sets the Y parameter
-const TOKEN_PARAMETER_Z = "Z"     // G-code line that sets the Z parameter
-const TOKEN_PARAMETER_I = "I"     // G-code line that sets the I (Arc X) parameter
-const TOKEN_PARAMETER_J = "J"     // G-code line that sets the J (Arc Y) parameter
-const TOKEN_PARAMETER_K = "K"     // G-code line that sets the K (Arc Z) parameter
-const TOKEN_PARAMETER_TOOL = "T"  // G-code line that sets the tool parameter
-const TOKEN_PARAMETER_SPEED = "S" // G-code line that sets the RPM parameter
-const TOKEN_PARAMETER_FEED = "F"  // G-code line that sets the feed rate parameter
-
-type Token string
-type Instruction []Token
-type Command []Instruction
-type Operation []Command
-type OperationTree []Operation
-type Coder struct {
-	Operations *OperationTree
+// Token Logic
+type Token struct {
+	Identifier TokenID
+	Value      string
 }
 
-func (t Token) NewToken(value string) (Token, error) {
-	err := IsValidToken(value)
-	if err != nil {
-		return Token(""), err
-	} else {
-		return Token(value), nil
+func (t Token) String() string {
+	return fmt.Sprintf("%s%s", t.Identifier, t.Value)
+}
+
+// OperationTree Logic
+type OperationTree []*Operation
+
+func (ot *OperationTree) NewOperation(com ...Command) *Operation {
+	op := &Operation{}
+	*ot = append(*ot, op)
+	for _, c := range com {
+		*op = append(*op, &c)
+	}
+	return op
+}
+
+func (ot *OperationTree) AddOperation(op ...Operation) {
+	for _, o := range op {
+		*ot = append(*ot, &o)
 	}
 }
 
-func (i Instruction) NewInstruction(tokens ...Token) Instruction {
-	return Instruction(tokens)
+func (ot *OperationTree) GetScript() string {
+	text := ""
+	for _, op := range *ot {
+		for _, com := range *op {
+			for _, ins := range *com {
+				for _, tok := range *ins {
+					text += tok.String() + " "
+				}
+				text += "\n"
+			}
+			text += "\n"
+		}
+		text += "\n"
+	}
+	return text
 }
 
-func (c Command) NewCommand(instructions ...Instruction) Command {
-	return Command(instructions)
+// Operation Logic
+type Operation []*Command
+
+func (op *Operation) NewCommand(ins ...Instruction) *Command {
+	com := &Command{}
+	*op = append(*op, com)
+	for _, i := range ins {
+		*com = append(*com, &i)
+	}
+	return com
 }
 
-func (o Operation) NewOperation(commands ...Command) Operation {
-	return Operation(commands)
+func (op *Operation) AddCommand(com ...Command) {
+	for _, c := range com {
+		*op = append(*op, &c)
+	}
 }
 
-func (ot OperationTree) NewOperationTree(operations ...Operation) OperationTree {
-	return OperationTree(operations)
+// Command Logic
+type Command []*Instruction
+
+func (com *Command) NewInstruction(tok ...Token) *Instruction {
+	ins := &Instruction{}
+	*com = append(*com, ins)
+	ins.AddToken(tok...)
+	return ins
 }
 
-func IsValidToken(value string) error {
-	return errors.New("invalid token")
+func (com *Command) AddInstruction(ins ...Instruction) {
+	for _, i := range ins {
+		*com = append(*com, &i)
+	}
 }
 
-func (t Token) IsValidInstruction(tok Token) error {
-	return errors.New("invalid Instruction")
-}
+// Instruction Logic
+type Instruction []*Token
 
-func (t Token) IsValidCommand(tok Token) error {
-	return errors.New("invalid Command")
-}
-
-func (t Token) IsValidOperation(tok Token) error {
-	return errors.New("invalid Operation")
-}
-
-func (t Token) IsValidComment(tok Token) error {
-	return errors.New("invalid Comment")
-}
-
-func (c Coder) NewOperation(tok Token) {
-
+func (ins *Instruction) AddToken(tok ...Token) {
+	for _, t := range tok {
+		*ins = append(*ins, &t)
+	}
 }
