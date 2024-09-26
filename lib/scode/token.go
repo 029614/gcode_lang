@@ -1,5 +1,7 @@
 package scode
 
+import "fmt"
+
 const ID_JOB_START = TokenID("JOBSTART")  // G-code line that starts the job
 const ID_JOB_END = TokenID("JOBEND")      // G-code line that ends the job
 const ID_SPINDLE = TokenID("SPINDLE")     // G-code line that starts the spindle
@@ -21,30 +23,14 @@ const ID_PARAMETER_TOOL = TokenID("T")    // G-code line that sets the tool para
 const ID_PARAMETER_SPEED = TokenID("S")   // G-code line that sets the RPM parameter
 const ID_PARAMETER_FEED = TokenID("F")    // G-code line that sets the feed rate parameter
 
-func NewToken(id TokenID, value string) Token {
-	return Token{Identifier: id, Value: value}
+type TokenID string
+
+// Token Logic
+type Token struct {
+	Identifier TokenID
+	Value      string
 }
 
-func NewInstruction(tok ...Token) Instruction {
-	ins := Instruction{}
-	ins.AddToken(tok...)
-	return ins
-}
-
-func NewCommand(ins ...Instruction) Command {
-	com := Command{}
-	com.AddInstruction(ins...)
-	return com
-}
-
-func NewOperation(com ...Command) Operation {
-	op := Operation{}
-	op.AddCommand(com...)
-	return op
-}
-
-func NewOperationTree(op ...Operation) OperationTree {
-	ot := OperationTree{}
-	ot.AddOperation(op...)
-	return ot
+func (t Token) String() string {
+	return fmt.Sprintf("%s%s", t.Identifier, t.Value)
 }
