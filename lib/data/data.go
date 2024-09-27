@@ -77,6 +77,14 @@ func (tl *ToolLibrary) GetTool(id string) (*Tool, error) {
 	return nil, errors.New("Tool not found")
 }
 
+func (rl *RouterLibrary) GetRouterList() []string {
+	var routerList []string
+	for _, router := range *rl {
+		routerList = append(routerList, router.Name)
+	}
+	return routerList
+}
+
 func (rl *RouterLibrary) GetRouterByID(id string) (*Router, error) {
 	for _, router := range *rl {
 		if router.ID == id {
@@ -154,11 +162,6 @@ func (r *Router) GetGangSlot(idx int) GangSlotData {
 // GetToolLibrary loads the ToolLibrary from the specified mock file.
 func GetToolLibrary() *ToolLibrary {
 	filePath := "./tests/toollib.json"
-	//file, err := os.Open(filePath)
-	//if err != nil {
-	//	log.Fatalf("failed to open tool library file: %v", err)
-	//}
-	//defer file.Close()
 
 	byteValue, err := os.ReadFile(filePath)
 	if err != nil {
@@ -176,11 +179,6 @@ func GetToolLibrary() *ToolLibrary {
 // GetRouterLibrary loads the RouterLibrary from the specified mock file.
 func GetRouterLibrary() *RouterLibrary {
 	filePath := "./tests/routerlib.json"
-	//file, err := os.Open(filePath)
-	//if err != nil {
-	//    log.Fatalf("failed to open router library file: %v", err)
-	//}
-	//defer file.Close()
 
 	byteValue, err := os.ReadFile(filePath)
 	if err != nil {

@@ -1,9 +1,21 @@
 package processor
 
-import "github.com/029614/gcode_lang/lib/scode"
+import (
+	"github.com/029614/gcode_lang/lib/data"
+	"github.com/029614/gcode_lang/lib/scode"
+)
 
 type MulticamProcessor struct {
 	ProcessorBase
+	Router *data.Router
+	Tools  *data.ToolLibrary
+}
+
+func NewMulticamProcessor(router *data.Router, tools *data.ToolLibrary) *MulticamProcessor {
+	return &MulticamProcessor{
+		Router: router,
+		Tools:  tools,
+	}
 }
 
 func (mp *MulticamProcessor) PostProcessOperation(operation *scode.Operation) {
