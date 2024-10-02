@@ -1,0 +1,236 @@
+ 0
+SECTION
+ 2
+HEADER
+ 0
+ENDSEC
+ 0
+SECTION
+ 2
+TABLES
+ 0
+TABLE
+ 2
+LTYPE
+ 70
+1
+ 0
+LTYPE
+ 2
+CONTINUOUS
+ 70
+0
+ 3
+Solid line
+ 72
+65
+ 73
+0
+ 40
+0.0
+ 0
+ENDTAB
+ 0
+TABLE
+ 2
+LAYER
+ 70
+2
+ 0
+LAYER
+ 2
+PartCut
+ 70
+0
+ 62
+1
+ 6
+CONTINUOUS
+ 0
+LAYER
+ 2
+DadoBack
+ 70
+0
+ 62
+6
+ 6
+CONTINUOUS
+ 0
+ENDTAB
+ 0
+ENDSEC
+ 0
+SECTION
+ 2
+BLOCKS
+ 0
+ENDSEC
+ 0
+SECTION
+ 2
+ENTITIES
+ 0
+POLYLINE
+ 8
+PartCut
+ 66
+1
+ 10
+0.0
+ 20
+0.0
+ 30
+0.0
+ 39
+-0.70000
+ 70
+1
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+0.00000
+ 20
+0.00000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+28.60000
+ 20
+0.00000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+28.60000
+ 20
+6.30000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+25.40000
+ 20
+6.30000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+25.40000
+ 20
+6.50000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+2.20000
+ 20
+6.50000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+2.20000
+ 20
+6.30000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+0.00000
+ 20
+6.30000
+ 30
+0.0
+ 0
+SEQEND
+ 8
+PartCut
+ 0
+POLYLINE
+ 8
+DadoBack
+ 66
+1
+ 10
+0.0
+ 20
+0.0
+ 30
+0.0
+ 39
+-0.46500
+ 70
+1
+ 0
+VERTEX
+ 8
+DadoBack
+ 10
+28.85000
+ 20
+6.81000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+DadoBack
+ 10
+28.85000
+ 20
+6.30000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+DadoBack
+ 10
+-0.25000
+ 20
+6.30000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+DadoBack
+ 10
+-0.25000
+ 20
+6.81000
+ 30
+0.0
+ 0
+SEQEND
+ 8
+DadoBack
+ 0
+ENDSEC
+ 0
+EOF

@@ -1,8 +1,8 @@
 package processor
 
 import (
-	"github.com/029614/gcode_lang/lib/data"
-	"github.com/029614/gcode_lang/lib/scode"
+	"github.com/029614/gcode_lang/pkg/data"
+	"github.com/029614/gcode_lang/pkg/scode"
 )
 
 type MulticamProcessor struct {

@@ -1,0 +1,366 @@
+ 0
+SECTION
+ 2
+HEADER
+ 0
+ENDSEC
+ 0
+SECTION
+ 2
+TABLES
+ 0
+TABLE
+ 2
+LTYPE
+ 70
+1
+ 0
+LTYPE
+ 2
+CONTINUOUS
+ 70
+0
+ 3
+Solid line
+ 72
+65
+ 73
+0
+ 40
+0.0
+ 0
+ENDTAB
+ 0
+TABLE
+ 2
+LAYER
+ 70
+3
+ 0
+LAYER
+ 2
+PartCut
+ 70
+0
+ 62
+1
+ 6
+CONTINUOUS
+ 0
+LAYER
+ 2
+BLOCKDRILLSYSTEM
+ 70
+0
+ 62
+6
+ 6
+CONTINUOUS
+ 0
+LAYER
+ 2
+DadoBack
+ 70
+0
+ 62
+6
+ 6
+CONTINUOUS
+ 0
+ENDTAB
+ 0
+ENDSEC
+ 0
+SECTION
+ 2
+BLOCKS
+ 0
+ENDSEC
+ 0
+SECTION
+ 2
+ENTITIES
+ 0
+POLYLINE
+ 8
+PartCut
+ 66
+1
+ 10
+0.0
+ 20
+0.0
+ 30
+0.0
+ 39
+-0.70000
+ 70
+1
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+7.17125
+ 20
+0.57200
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+7.17125
+ 20
+6.37500
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+7.02125
+ 20
+6.37500
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+7.02125
+ 20
+7.50000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+0.15000
+ 20
+7.50000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+0.15000
+ 20
+6.37500
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+0.00000
+ 20
+6.37500
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+0.00000
+ 20
+0.57200
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+1.56250
+ 20
+0.57200
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+1.56250
+ 20
+0.00000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+5.60875
+ 20
+0.00000
+ 30
+0.0
+ 0
+VERTEX
+ 8
+PartCut
+ 10
+5.60875
+ 20
+0.57200
+ 30
+0.0
+ 0
+SEQEND
+ 8
+PartCut
+ 0
+CIRCLE
+ 8
+BLOCKDRILLSYSTEM
+ 10
+6.80525
+ 20
+0.94500
+ 30
+0.00000
+ 39
+-0.80000
+ 40
+0.09843
+ 210
+ 0 
+ 220
+ 0 
+ 230
+ 1 
+ 0
+CIRCLE
+ 8
+BLOCKDRILLSYSTEM
+ 10
+6.68525
+ 20
+0.94500
+ 30
+0.00000
+ 39
+-0.80000
+ 40
+0.09843
+ 210
+ 0 
+ 220
+ 0 
+ 230
+ 1 
+ 0
+CIRCLE
+ 8
+BLOCKDRILLSYSTEM
+ 10
+0.48600
+ 20
+0.94500
+ 30
+0.00000
+ 39
+-0.80000
+ 40
+0.09843
+ 210
+ 0 
+ 220
+ 0 
+ 230
+ 1 
+ 0
+CIRCLE
+ 8
+BLOCKDRILLSYSTEM
+ 10
+0.36600
+ 20
+0.94500
+ 30
+0.00000
+ 39
+-0.80000
+ 40
+0.09843
+ 210
+ 0 
+ 220
+ 0 
+ 230
+ 1 
+ 0
+POLYLINE
+ 8
+DadoBack
+ 66
+1
+ 10
+0.0
+ 20
+0.0
+ 30
+0.0
+ 39
+-0.15000
+ 70
+1
+ 0
+VERTEX
+ 8
+DadoBack
+ 10
+7.42125
+ 20
+1.25200
+ 30
+0.0
+ 0
+VERTEX
+ 8
+DadoBack
+ 10
+7.42125
+ 20
+0.51200
+ 30
+0.0
+ 0
+VERTEX
+ 8
+DadoBack
+ 10
+-0.25000
+ 20
+0.51200
+ 30
+0.0
+ 0
+VERTEX
+ 8
+DadoBack
+ 10
+-0.25000
+ 20
+1.25200
+ 30
+0.0
+ 0
+SEQEND
+ 8
+DadoBack
+ 0
+ENDSEC
+ 0
+EOF

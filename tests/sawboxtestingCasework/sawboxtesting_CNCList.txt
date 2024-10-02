@@ -1,0 +1,85 @@
+sawboxtesting_06_Back_002F.dxf, Back, 29.47, 29, 0.7, .7 PrefinBirchPly, 6, 1, 0, 0, F
+sawboxtesting_06_Left_001F.dxf, Left, 34.5, 23.875, 0.7, .7 PrefinBirchPly, 6, 1, 0, 0, F
+sawboxtesting_06_Right_001F.dxf, Right, 34.5, 23.875, 0.7, .7 PrefinBirchPly, 6, 1, 0, 0, F
+sawboxtesting_06_Bottom_001F.dxf, Bottom, 28.94, 23.875, 0.7, .7 PrefinBirchPly, 6, 1, 0, 0, F
+sawboxtesting_06_Top_Back_001F.dxf, Top_Back, 28.94, 5.25, 0.7, .7 PrefinBirchPly, 6, 1, 1, 0, F
+sawboxtesting_06_Top_Front_001F.dxf, Top_Front, 28.94, 5.25, 0.7, .7 PrefinBirchPly, 6, 1, 0, 0, F
+sawboxtesting_06_Front_001F.dxf, Front, 28.6, 6.5, 0.7, .7 PrefinBirchPly, 6, 1, 0, 0, F
+sawboxtesting_06_ToeKick_001F.dxf, ToeKick, 29, 4, 0.7, .7 PrefinBirchPly, 6, 1, 1, 0, F
+sawboxtesting_14_Back_001F.dxf, Back, 29.47, 29, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Left_001F.dxf, Left, 34.5, 23.875, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Right_001F.dxf, Right, 34.5, 23.875, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_BlindPanel_001F.dxf, BlindPanel, 22.8675, 12.9625, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Bottom_001F.dxf, Bottom, 28.94, 23.875, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Top_Back_001F.dxf, Top_Back, 28.94, 5.25, 0.7, .7 PrefinBirchPly, 14, 1, 1, 0, F
+sawboxtesting_14_Top_Front_001F.dxf, Top_Front, 28.94, 5.25, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Mid_Front_001F.dxf, Mid_Front, 28.94, 5.25, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Shelf_001F.dxf, Shelf, 28.57, 21.8, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_FillBacker_001F.dxf, FillBacker, 30.5, 4, 0.7, .7 PrefinBirchPly, 14, 1, 1, 0, F
+sawboxtesting_14_ToeKick_001F.dxf, ToeKick, 29, 4, 0.7, .7 PrefinBirchPly, 14, 1, 1, 0, F
+sawboxtesting_14_SlideMount_001F.dxf, SlideMount, 5.9125, 22.8, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Drawer_Side_001F.dxf, Drawer Side, 4, 21, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Drawer_Side_002F.dxf, Drawer Side, 4, 21, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Drawer_Front_001F.dxf, Drawer Front, 4, 14.14, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_Drawer_Back_001F.dxf, Drawer Back, 4, 14.14, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_14_DBot_001F.dxf, DBot, 19.85, 14.13, 0.7, .7 PrefinBirchPly, 14, 1, 0, 0, F
+sawboxtesting_18_Back_001F.dxf, Back, 25.47, 29, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Left_001F.dxf, Left, 30.5, 20.875, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Right_001F.dxf, Right, 30.5, 20.875, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Bottom_001F.dxf, Bottom, 28.94, 20.875, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Top_Back_001F.dxf, Top_Back, 28.94, 5.25, 0.7, .7 PrefinBirchPly, 18, 1, 1, 0, F
+sawboxtesting_18_Top_Front_001F.dxf, Top_Front, 28.94, 5.25, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Front_001F.dxf, Front, 28.6, 6.825, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_OffsetDivider_001F.dxf, OffsetDivider, 18.815, 15.875, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_HingeStrip_001F.dxf, HingeStrip, 18.475, 4, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_DrawerTop_001F.dxf, DrawerTop, 9.51625, 15.175, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_ToeKick_001F.dxf, ToeKick, 29, 4, 0.7, .7 PrefinBirchPly, 18, 1, 1, 0, F
+sawboxtesting_18_Drawer_Side_001F.dxf, Drawer Side, 7.5, 15, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Drawer_Side_002F.dxf, Drawer Side, 7.5, 15, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Drawer_Front_001F.dxf, Drawer Front, 7.5, 7.17125, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Drawer_Back_001F.dxf, Drawer Back, 7.5, 7.17125, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_DBot_001F.dxf, DBot, 13.85, 7.16125, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Drawer_Side_003F.dxf, Drawer Side, 7.5, 15, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Drawer_Side_004F.dxf, Drawer Side, 7.5, 15, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Drawer_Front_002F.dxf, Drawer Front, 7.5, 7.17125, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_Drawer_Back_002F.dxf, Drawer Back, 7.5, 7.17125, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_18_DBot_002F.dxf, DBot, 13.85, 7.16125, 0.7, .7 PrefinBirchPly, 18, 1, 0, 0, F
+sawboxtesting_21_LeftBack_001F.dxf, LeftBack, 34.5, 31.125, 0.7, .7 PrefinBirchPly, 21, 1, 0, 0, F
+sawboxtesting_21_RightBack_001F.dxf, RightBack, 34.5, 34.625, 0.7, .7 PrefinBirchPly, 21, 1, 0, 0, F
+sawboxtesting_21_Left_001F.dxf, Left, 34.5, 20, 0.7, .7 PrefinBirchPly, 21, 1, 0, 0, F
+sawboxtesting_21_Right_001F.dxf, Right, 34.5, 18, 0.7, .7 PrefinBirchPly, 21, 1, 0, 0, F
+sawboxtesting_21_Bottom_001F.dxf, Bottom, 30.625, 34.625, 0.7, .7 PrefinBirchPly, 21, 1, 0, 0, F
+sawboxtesting_21_Top_001F.dxf, Top, 30.625, 34.625, 0.7, .7 PrefinBirchPly, 21, 1, 0, 0, F
+sawboxtesting_21_Shelf_001F.dxf, Shelf, 30.165, 34.165, 0.7, .7 PrefinBirchPly, 21, 1, 0, 0, F
+sawboxtesting_21_ToeKick_001F.dxf, ToeKick, 152.545, 4, 0.7, .7 PrefinBirchPly, 21, 1, 1, 0, F
+sawboxtesting_22_LeftBack_001F.dxf, LeftBack, 34.5, 31.125, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_RightBack_001F.dxf, RightBack, 34.5, 34.625, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_Left_001F.dxf, Left, 34.5, 20, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_Right_001F.dxf, Right, 34.5, 22, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_BottomA_001F.dxf, BottomA, 19.125, 10.625, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_BottomB_001F.dxf, BottomB, 34.625, 21.125, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_TopA_001F.dxf, TopA, 19.125, 10.625, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_TopB_001F.dxf, TopB, 34.625, 6.625, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_KickA_001F.dxf, KickA, 13.2, 4, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_22_KickB_001F.dxf, KickB, 18.7, 4, 0.7, .7 PrefinBirchPly, 22, 1, 0, 0, F
+sawboxtesting_27_Back_001F.dxf, Back, 28.97, 39, 0.7, .7 PrefinBirchPly, 27, 1, 0, 0, F
+sawboxtesting_27_Left_001F.dxf, Left, 30, 11.875, 0.7, .7 PrefinBirchPly, 27, 1, 0, 0, F
+sawboxtesting_27_Right_001F.dxf, Right, 30, 11.875, 0.7, .7 PrefinBirchPly, 27, 1, 0, 0, F
+sawboxtesting_27_Bottom_001F.dxf, Bottom, 38.6, 11.875, 0.7, .7 PrefinBirchPly, 27, 1, 0, 0, F
+sawboxtesting_27_Top_001F.dxf, Top, 38.6, 11.875, 0.7, .7 PrefinBirchPly, 27, 1, 0, 0, F
+sawboxtesting_27_Divider_001F.dxf, Divider, 28.91, 10.77, 0.7, .7 PrefinBirchPly, 27, 1, 0, 0, F
+sawboxtesting_27_Shelf_001F.dxf, Shelf, 18.92, 10.55, 0.7, .7 PrefinBirchPly, 27, 4, 0, 0, F
+sawboxtesting_33_Back_001F.dxf, Back, 25.47, 24, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Left_001F.dxf, Left, 30.5, 21, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Right_001F.dxf, Right, 30.5, 21, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Bottom_001F.dxf, Bottom, 23.94, 21, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Top_Back_001F.dxf, Top_Back, 23.94, 5.25, 0.7, .7 PrefinBirchPly, 33, 1, 1, 0, F
+sawboxtesting_33_Top_Front_001F.dxf, Top_Front, 23.94, 5.25, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Front_001F.dxf, Front, 23.94, 2.2, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Middle_001F.dxf, Middle, 23.94, 19.885, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_ToeKick_001F.dxf, ToeKick, 24, 4, 0.7, .7 PrefinBirchPly, 33, 1, 1, 0, F
+sawboxtesting_33_Drawer_Side_001F.dxf, Drawer Side, 4, 18, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Drawer_Side_002F.dxf, Drawer Side, 4, 18, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Drawer_Front_001F.dxf, Drawer Front, 4, 22.14, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_Drawer_Back_001F.dxf, Drawer Back, 4, 22.14, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F
+sawboxtesting_33_DBot_001F.dxf, DBot, 16.85, 22.13, 0.7, .7 PrefinBirchPly, 33, 1, 0, 0, F

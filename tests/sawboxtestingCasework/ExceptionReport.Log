@@ -1,0 +1,649 @@
+
+Hole off part.
+Unit Number:  14
+Template Name:  Part-2-Tabs.tem
+Location X:  9.0    Y:  23.525   (Before Rotation)
+Diameter:  0.15748
+Depth:  0.82
+Tool:  #PilotHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  19.78875    Y:  6.65   (Before Rotation)
+Diameter:  0.74
+Depth:  0.2
+Tool:  #Groove7Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  29.025    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove8Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.085    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove9Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.165    Y:  0.745   (Before Rotation)
+Diameter:  0.74
+Depth:  0.2
+Tool:  #Groove10Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  29.025    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove8Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.085    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove9Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.165    Y:  0.745   (Before Rotation)
+Diameter:  0.74
+Depth:  0.2
+Tool:  #Groove10Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  2.87    Y:  0.575   (Before Rotation)
+Diameter:  0.27
+Depth:  0.215
+Tool:  #Groove7Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  2.87    Y:  0.575   (Before Rotation)
+Diameter:  0.27
+Depth:  0.215
+Tool:  #Groove7Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  29.025    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove8Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.085    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove9Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  0.45   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  0.45   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  1.51299   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  1.51299   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  2.77284   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  2.77284   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  6.55236   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  6.55236   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  9.07205   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  9.07205   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  10.33189   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  11.72    Y:  10.33189   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  0.45   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  0.45   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  1.51299   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  1.51299   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  2.77284   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  2.77284   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  6.55236   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  6.55236   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  9.07205   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  9.07205   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  10.33189   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  18
+Template Name:  Part-2-Tabs.tem
+Location X:  1.72    Y:  10.33189   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  22
+Template Name:  Side-Left-With-Kick.tem
+Location X:  6.71654    Y:  1.457   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  22
+Template Name:  Side-Left-With-Kick.tem
+Location X:  7.97638    Y:  1.457   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  22
+Template Name:  Side-Left-With-Kick.tem
+Location X:  31.53346    Y:  1.457   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  22
+Template Name:  Side-Left-With-Kick.tem
+Location X:  30.27362    Y:  1.457   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  22
+Template Name:  Side-Right-With-Kick.tem
+Location X:  6.71654    Y:  1.457   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  22
+Template Name:  Side-Right-With-Kick.tem
+Location X:  7.97638    Y:  1.457   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  22
+Template Name:  Side-Right-With-Kick.tem
+Location X:  31.53346    Y:  1.457   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Hole Found.
+Unit Number:  22
+Template Name:  Side-Right-With-Kick.tem
+Location X:  30.27362    Y:  1.457   (Before Rotation)
+Diameter:  0.19685
+Depth:  0.52
+Tool:  #HingeHoleTool
+Direction I:  0.0    J:  0.0    K:  1.0   (Before Rotation)
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  24.025    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove8Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.085    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove9Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.165    Y:  0.745   (Before Rotation)
+Diameter:  0.74
+Depth:  0.2
+Tool:  #Groove10Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  24.025    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove8Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.085    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove9Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.165    Y:  0.745   (Before Rotation)
+Diameter:  0.74
+Depth:  0.2
+Tool:  #Groove10Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  2.87    Y:  0.575   (Before Rotation)
+Diameter:  0.26
+Depth:  0.215
+Tool:  #Groove7Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  2.87    Y:  0.575   (Before Rotation)
+Diameter:  0.26
+Depth:  0.215
+Tool:  #Groove7Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  24.025    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove8Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.085    Y:  -0.35   (Before Rotation)
+Diameter:  0.51
+Depth:  0.2
+Tool:  #Groove9Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  0.0    Y:  0.0   (Before Rotation)
+Diameter:  0.74
+Depth:  0.2
+Tool:  #Groove10Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  0.0    Y:  0.0   (Before Rotation)
+Diameter:  0.26
+Depth:  0.215
+Tool:  #Groove7Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  23.995    Y:  -0.25   (Before Rotation)
+Diameter:  0.51
+Depth:  0.465
+Tool:  #Groove8Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.055    Y:  -0.25   (Before Rotation)
+Diameter:  0.51
+Depth:  0.465
+Tool:  #Groove9Tool
+Tool Offset:  Center
+
+=====================================================
+
+Duplicate Groove Found.
+Unit Number:  33
+Template Name:  Part-2-Tabs.tem
+Point 2 X:  -0.25    Y:  2.255   (Before Rotation)
+Diameter:  0.51
+Depth:  0.465
+Tool:  #Groove10Tool
+Tool Offset:  Center
+
+=====================================================

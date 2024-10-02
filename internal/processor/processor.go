@@ -1,6 +1,6 @@
 package processor
 
-import "github.com/029614/gcode_lang/lib/scode"
+import "github.com/029614/gcode_lang/pkg/scode"
 
 type ProcessorBase struct{}
 

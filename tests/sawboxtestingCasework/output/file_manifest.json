@@ -1,0 +1,65 @@
+[
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_Units_.json",
+    "filename": "UNITS",
+    "mimetype": "application/json",
+    "filetype": "Units"
+  },
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_Units_.json",
+    "filename": "UNITS",
+    "mimetype": "application/json",
+    "filetype": "Units"
+  },
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_casework_parts.json",
+    "filename": "Casework",
+    "mimetype": "application/json",
+    "filetype": "Parts"
+  },
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_drawers_parts.json",
+    "filename": "Drawers",
+    "mimetype": "application/json",
+    "filetype": "Parts"
+  },
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_panels_parts.json",
+    "filename": "Panels",
+    "mimetype": "application/json",
+    "filetype": "Parts"
+  },
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_Units_.json",
+    "filename": "UNITS",
+    "mimetype": "application/json",
+    "filetype": "Units"
+  },
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_casework_parts.json",
+    "filename": "Casework",
+    "mimetype": "application/json",
+    "filetype": "Parts"
+  },
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_drawers_parts.json",
+    "filename": "Drawers",
+    "mimetype": "application/json",
+    "filetype": "Parts"
+  },
+  {
+    "type": "file",
+    "url": "../TEST_DATA/sawboxtestingCasework//output/PartOutput_panels_parts.json",
+    "filename": "Panels",
+    "mimetype": "application/json",
+    "filetype": "Parts"
+  }
+]
