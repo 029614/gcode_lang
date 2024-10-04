@@ -1,0 +1,89 @@
+{
+  "operations": [
+    {
+      "name": "PartCut",
+      "type": "CUT",
+      "tool": "075843dc-308a-4c9f-b4a9-8d27a7279484",
+      "ramp": 30.0,
+      "feed_rate": 550,
+      "plunge_rate": 20,
+      "spindle_rpm": 18000,
+      "offset": "right",
+      "cut_depth": 0.003,
+      "cut_height": 0.75,
+      "feed_height": 1.125
+    },
+    {
+      "name": "BLOCKDRILLSYSTEM",
+      "type": "DRILL",
+      "tool": "0082497c-8b78-4775-85a7-9961729402bd",
+      "feed_rate": 30,
+      "spindle_rpm": 10000,
+      "drill_depth": -0.25,
+      "drill_height": 0.75,
+      "feed_height": 1.125
+    },
+    {
+      "name": "BLOCKDRILLPILOT",
+      "type": "DRILL",
+      "tool": "c696d270-4e8b-4572-85b2-d771ffbacc35",
+      "feed_rate": 30,
+      "spindle_rpm": 10000,
+      "drill_depth": 0.125,
+      "drill_height": 0.75,
+      "feed_height": 1.125
+    },
+    {
+      "name": "RABBET2525",
+      "type": "CUT",
+      "tool": "6575c129-45f5-47d4-9f49-e02d8f5257a3",
+      "ramp": 0.0,
+      "feed_rate": 280,
+      "plunge_rate": 20,
+      "spindle_rpm": 18000,
+      "offset": "center",
+      "cut_depth": 0.5,
+      "cut_height": 0.75,
+      "feed_height": 1.125
+    },
+    {
+      "name": "GROOVE25",
+      "type": "CUT",
+      "tool": "6575c129-45f5-47d4-9f49-e02d8f5257a3",
+      "ramp": 0.0,
+      "feed_rate": 280,
+      "plunge_rate": 20,
+      "spindle_rpm": 18000,
+      "offset": "center",
+      "cut_depth": 0.5,
+      "cut_height": 0.75,
+      "feed_height": 1.125
+    },
+    {
+      "name": "DadoBack",
+      "type": "CUT",
+      "tool": "7b544622-e59c-497f-8d1f-21ea741c9a73",
+      "ramp": 0.0,
+      "feed_rate": 650,
+      "plunge_rate": 15,
+      "spindle_rpm": 18000,
+      "offset": "center",
+      "cut_depth": 0.5,
+      "cut_height": 0.75,
+      "feed_height": 1.125
+    },
+    {
+      "name": "DRAWBOLTS",
+      "type": "CUT",
+      "tool": "075843dc-308a-4c9f-b4a9-8d27a7279484",
+      "ramp": 0.0,
+      "feed_rate": 550,
+      "plunge_rate": 20,
+      "spindle_rpm": 18000,
+      "offset": "center",
+      "cut_depth": 0.35,
+      "cut_height": 0.75,
+      "feed_height": 1.125
+    }
+  ]
+}
