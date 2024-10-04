@@ -4,6 +4,7 @@ import (
 	"errors"
 
 	nestparser "github.com/029614/gcode_lang/internal/parser/nest"
+	"github.com/029614/gcode_lang/pkg/toolpath"
 )
 
 func main() {
@@ -18,6 +19,11 @@ func main() {
 	}
 
 	err = ValidateParts(partlist)
+	if err != nil {
+		panic(err)
+	}
+
+	err = toolpath.Toolpath(partlist.Nest)
 	if err != nil {
 		panic(err)
 	}
@@ -38,7 +44,6 @@ func ValidateParts(partlist *nestparser.PartList) error {
 
 func Contains(pslice []*nestparser.Part, part *nestparser.Part) bool {
 	for _, p := range pslice {
-		println(p, " : ", part)
 		if p == part {
 			return true
 		}

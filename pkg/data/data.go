@@ -68,6 +68,16 @@ type RouterGangData struct {
 	Nine  GangSlotData `json:"9"`
 }
 
+type OperationLibrary []*Operation
+
+type Operation struct {
+	ID   string `json:"id"`
+	tool string `json:"tool"`
+	Tool *Tool
+}
+
+func (o *Operation) 
+
 func (tl *ToolLibrary) GetTool(id string) (*Tool, error) {
 	for _, tool := range *tl {
 		if tool.ID == id {
