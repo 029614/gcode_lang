@@ -1,106 +1,143 @@
 package toolpath
 
 import (
+	"errors"
+	"fmt"
+
 	nestparser "github.com/029614/gcode_lang/internal/parser/nest"
 	"github.com/029614/gcode_lang/pkg/data"
-	"github.com/Anaxarchus/zero-gdscript/pkg/vector3"
 )
 
-type OpPath struct {
-	points []vector3.Vector3
-	tool   *data.Tool
+const OnionMinLength = 7.25
+const OnionMinArea = 700.0
+
+type ToolpathPoint [4]float64
+
+type ToolpathSolution []*ToolpathSheet
+
+type ToolpathSheet []*ToolpathOperation
+
+type ToolpathOperation struct {
+	Operation *data.Operation
+	Instance  []*nestparser.Operation
+	Toolpath  []ToolpathPoint
 }
 
-type Path struct {
-	points []vector3.Vector3
-}
+type PartCategory int
 
-func Toolpath(nest *nestparser.Nest) error {
+const (
+	PartCategoryHuge PartCategory = iota
+	PartCategoryLarge
+	PartCategoryMedium
+	PartCategorySmall
+	PartCategoryTiny
+)
+
+func Toolpath(nest *nestparser.Nest, data *data.Data) (*ToolpathSolution, error) {
+	sol := ToolpathSolution{}
 	// Toolpath function
 	for _, sheet := range nest.Sheets {
-		err := toolpathSheet(sheet)
+		tsh, err := toolpathSheet(sheet, data)
+		sol = append(sol, tsh)
 		if err != nil {
-			return err
+			return nil, err
 		}
 	}
-	return nil
+	return &sol, nil
 }
 
-func toolpathSheet(sheet *nestparser.Sheet) error {
-	// Toolpath function
-	chains := make([]*nestparser.Operation, 0)
-	arcs := make([]*nestparser.Operation, 0)
-	points := make([]*nestparser.Operation, 0)
+func toolpathSheet(sheet *nestparser.Sheet, data *data.Data) (*ToolpathSheet, error) {
+	tsh := ToolpathSheet{}
 
-	// compile chains, arcs, and points
+	// Toolpath function
+	var opMap = make(map[string][]*nestparser.Operation)
+	for _, opName := range data.OperationLibrary.ListOperationsByName() {
+		opMap[opName] = make([]*nestparser.Operation, 0)
+	}
+
+	// Compile chains, arcs, and points
 	for _, part := range sheet.Parts {
 		for _, chain := range part.Geometry.Chains {
-			chains = append(chains, &chain)
+			opMap[chain.Operation] = append(opMap[chain.Operation], &chain)
 		}
 		for _, arc := range part.Geometry.Arcs {
-			arcs = append(arcs, &arc)
+			opMap[arc.Operation] = append(opMap[arc.Operation], &arc)
 		}
 		for _, point := range part.Geometry.Points {
-			points = append(points, &point)
+			opMap[point.Operation] = append(opMap[point.Operation], &point)
 		}
 	}
 
-	// process chains, arcs, and points
-	err := toolpathChains(chains)
-	if err != nil {
-		return err
+	for opName, operations := range opMap {
+		dop, _ := data.OperationLibrary.GetOperationByName(opName)
+		top := ToolpathOperation{
+			Operation: dop,
+			Instance:  operations,
+		}
+
+		err := top.toolpath()
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		tsh = append(tsh, &top)
 	}
-	err = toolpathArcs(arcs)
-	if err != nil {
-		return err
-	}
-	err = toolpathPoints(points)
-	if err != nil {
-		return err
-	}
-	return nil
+
+	return &tsh, nil
 }
 
-func toolpathChains(chains []*nestparser.Operation) error {
-	// Toolpath function
-	ops := map[string]int{}
-	for _, chain := range chains {
-		// do something with the chain
-		ops[chain.Operation]++
+func (to *ToolpathOperation) toolpath() error {
+	switch to.Operation.Name {
+	case "PartCut":
+		return toolpathPartCut(to)
+	case "BLOCKDRILLSYSTEM":
+		return toolpathBlockDrillSystem(to)
+	case "BLOCKDRILLPILOT":
+		return toolpathBlockDrillPilot(to)
+	case "RABBET2525":
+		return toolpathRabbet(to)
+	case "GROOVE25":
+		return toolpathGroove(to)
+	case "DadoBack":
+		return toolpathDadoBack(to)
+	case "DRAWBOLTS":
+		return toolpathDrawBolts(to)
+	default:
+		return errors.New("invalid operation")
 	}
-	println("chains:")
-	// print the keys
-	for op := range ops {
-		println("\t", op)
-	}
-	return nil
 }
 
-func toolpathArcs(arcs []*nestparser.Operation) error {
-	// Toolpath function
-	println("arcs:")
-	ops := map[string]int{}
-	for _, arc := range arcs {
-		// do something with the arc
-		ops[arc.Operation]++
+func getCategory(rect [2]float64) PartCategory {
+	if rect[0]*rect[1] < 150.0 {
+		return PartCategoryTiny
+	} else if rect[0]*rect[1] < 300.0 || rect[0] < 6.0 || rect[1] < 6.0 {
+		return PartCategorySmall
+	} else if rect[0]*rect[1] < 700.0 || rect[0] < 7.25 || rect[1] < 7.25 {
+		return PartCategoryMedium
+	} else {
+		return PartCategoryLarge
 	}
-	// print the keys
-	for op := range ops {
-		println("\t", op)
-	}
-	return nil
 }
 
-func toolpathPoints(points []*nestparser.Operation) error {
+func getRampDistance(angle, height float64) (float64, error) {
 	// Toolpath function
-	ops := map[string]int{}
-	for _, point := range points {
-		// do something with the point
-		ops[point.Operation]++
+	return 0.0, nil
+}
+
+func shouldOnion(rect [2]float64) bool {
+	switch getCategory(rect) {
+	case PartCategoryHuge, PartCategoryLarge:
+		return false
+	default:
+		return true
 	}
-	// print the keys
-	for op := range ops {
-		println("\t", op)
+}
+
+func shouldDownCut(rect [2]float64) bool {
+	switch getCategory(rect) {
+	case PartCategorySmall, PartCategoryTiny:
+		return true
+	default:
+		return false
 	}
-	return nil
 }

@@ -4,31 +4,30 @@ import (
 	"errors"
 
 	nestparser "github.com/029614/gcode_lang/internal/parser/nest"
+	"github.com/029614/gcode_lang/pkg/data"
 	"github.com/029614/gcode_lang/pkg/toolpath"
 )
 
 func main() {
-	partlist, err := nestparser.LoadPartList("/Users/samuelmcclure/dev/GitHub/gcode_lang/tests/sawboxtestingCasework/output/PartOutput_casework_parts.json")
+	data := data.NewData()
+	parts, err := nestparser.LoadPartList("/Users/samuelmcclure/dev/GitHub/gcode_lang/tests/sawboxtestingCasework/output/PartOutput_casework_parts.json")
+	if err != nil {
+		panic(err)
+	}
+	println("parts loaded")
+
+	err = parts.LoadNest("/Users/samuelmcclure/dev/GitHub/gcode_lang/tests/sawboxtestingCasework/output/PartOutput_casework_parts_output.json")
+	if err != nil {
+		panic(err)
+	}
+	println("nest loaded")
+
+	tp, err := toolpath.Toolpath(parts.Nest, data)
 	if err != nil {
 		panic(err)
 	}
 
-	err = partlist.LoadNest("/Users/samuelmcclure/dev/GitHub/gcode_lang/tests/sawboxtestingCasework/output/PartOutput_casework_parts_output.json")
-	if err != nil {
-		panic(err)
-	}
-
-	err = ValidateParts(partlist)
-	if err != nil {
-		panic(err)
-	}
-
-	err = toolpath.Toolpath(partlist.Nest)
-	if err != nil {
-		panic(err)
-	}
-
-	println("done")
+	println(tp)
 }
 
 func ValidateParts(partlist *nestparser.PartList) error {

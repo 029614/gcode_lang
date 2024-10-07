@@ -3,6 +3,7 @@ package nestparser
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -227,4 +228,38 @@ func (pl *PartList) GenerateNest(pathToInterface string, sheetLength, sheetHeigh
 
 	// Temp directory and files will be deleted automatically by `defer os.RemoveAll(tempDir)`
 	return nil
+}
+
+func (pg *PartGeometry) GetBoundingBox() [2]float64 {
+	var minX, minY, maxX, maxY float64
+
+	// Initialize min and max to suitable values
+	minX, minY = math.MaxFloat64, math.MaxFloat64
+	maxX, maxY = -math.MaxFloat64, -math.MaxFloat64
+
+	for _, chain := range pg.Chains {
+		geo := chain.Geometry
+
+		// Check if chain.Geometry is of type ChainGeometry
+		if chainGeometry, ok := geo.(ChainGeometry); ok {
+			// Use chainGeometry for bounding box calculations
+			// Example: Assuming ChainGeometry has fields for coordinates
+			for _, point := range chainGeometry.Points {
+				if point.X < minX {
+					minX = point.X
+				}
+				if point.Y < minY {
+					minY = point.Y
+				}
+				if point.X > maxX {
+					maxX = point.X
+				}
+				if point.Y > maxY {
+					maxY = point.Y
+				}
+			}
+		}
+	}
+
+	return [2]float64{minX, minY, maxX, maxY}
 }
