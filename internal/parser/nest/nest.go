@@ -3,25 +3,53 @@ package nestparser
 import (
 	"encoding/json"
 	"fmt"
-	"math"
 	"os"
 	"os/exec"
 	"path/filepath"
 
+	"github.com/Anaxarchus/zero-gdscript/pkg/rect2"
 	"github.com/Anaxarchus/zero-gdscript/pkg/vector2"
+	"github.com/Anaxarchus/zero-gdscript/pkg/vector3"
 )
 
+type Vector2 = vector2.Vector2
+type Vector3 = vector3.Vector3
+type Rect2 = rect2.Rect2
+
 type Point struct {
-	vector2.Vector2
+	Vector2
 	Bulge float64 `json:"bulge"`
 }
 
-type BaseGeometry struct{}
+type BaseGeometry interface {
+	GetBoundingBox() Rect2
+}
 
 type ChainGeometry struct {
 	BaseGeometry
 	Points []Point `json:"points"`
 	Closed int     `json:"closed"`
+}
+
+func (cg ChainGeometry) GetBoundingBox() Rect2 {
+	var min, max Vector2
+
+	for _, point := range cg.Points {
+		if point.X < min.X {
+			min.X = point.X
+		}
+		if point.Y < min.Y {
+			min.Y = point.Y
+		}
+		if point.X > max.X {
+			max.X = point.X
+		}
+		if point.Y > max.Y {
+			max.Y = point.Y
+		}
+	}
+
+	return rect2.New(min, max.Min(min))
 }
 
 type ArcGeometry struct {
@@ -30,6 +58,13 @@ type ArcGeometry struct {
 	StartAngle float64 `json:"start_angle"`
 	Sweep      float64 `json:"sweep"`
 	Position   Point   `json:"position"`
+}
+
+func (ag ArcGeometry) GetBoundingBox() Rect2 {
+	return rect2.Rect2{
+		Position: vector2.New(ag.Position.X-ag.Radius, ag.Position.Y-ag.Radius),
+		Size:     vector2.New(ag.Radius*2, ag.Radius*2),
+	}
 }
 
 type Operation struct {
@@ -45,13 +80,13 @@ type PartGeometry struct {
 }
 
 type Part struct {
-	Name        string          `json:"name"`
-	Size        vector2.Vector2 `json:"size"`
-	Origin      vector2.Vector2 `json:"origin"`
-	Limit       vector2.Vector2 `json:"limit"`
-	IsRotated   int             `json:"isRotated"`
-	Area        float64         `json:"area"`
-	SheetNumber int             `json:"sheet"`
+	Name        string  `json:"name"`
+	Size        Vector2 `json:"size"`
+	Origin      Vector2 `json:"origin"`
+	Limit       Vector2 `json:"limit"`
+	IsRotated   int     `json:"isRotated"`
+	Area        float64 `json:"area"`
+	SheetNumber int     `json:"sheet"`
 
 	ID         string       `json:"partId,omitempty"`
 	CanRotate  int          `json:"canRotate,omitempty"`
@@ -68,12 +103,12 @@ type Sheet struct {
 }
 
 type Nest struct {
-	Partgap   float64         `json:"partgap"`
-	Sheetsize vector2.Vector2 `json:"sheetsize"`
-	Sheets    []*Sheet        `json:"sheets"`
-	Nofits    []*Part         `json:"nofits"`
-	Material  string          `json:"material"`
-	Jobname   string          `json:"jobname"`
+	Partgap   float64  `json:"partgap"`
+	Sheetsize Vector2  `json:"sheetsize"`
+	Sheets    []*Sheet `json:"sheets"`
+	Nofits    []*Part  `json:"nofits"`
+	Material  string   `json:"material"`
+	Jobname   string   `json:"jobname"`
 }
 
 type PartList struct {
@@ -230,36 +265,36 @@ func (pl *PartList) GenerateNest(pathToInterface string, sheetLength, sheetHeigh
 	return nil
 }
 
-func (pg *PartGeometry) GetBoundingBox() [2]float64 {
-	var minX, minY, maxX, maxY float64
+func (pg *PartGeometry) GetBoundingBox() Rect2 {
+	var res Rect2
 
-	// Initialize min and max to suitable values
-	minX, minY = math.MaxFloat64, math.MaxFloat64
-	maxX, maxY = -math.MaxFloat64, -math.MaxFloat64
-
-	for _, chain := range pg.Chains {
-		geo := chain.Geometry
-
-		// Check if chain.Geometry is of type ChainGeometry
-		if chainGeometry, ok := geo.(ChainGeometry); ok {
-			// Use chainGeometry for bounding box calculations
-			// Example: Assuming ChainGeometry has fields for coordinates
-			for _, point := range chainGeometry.Points {
-				if point.X < minX {
-					minX = point.X
-				}
-				if point.Y < minY {
-					minY = point.Y
-				}
-				if point.X > maxX {
-					maxX = point.X
-				}
-				if point.Y > maxY {
-					maxY = point.Y
-				}
+	for _, op := range pg.Chains {
+		oprect := op.Geometry.GetBoundingBox()
+		if res.HasArea() {
+			if !res.Encloses(oprect) {
+				res = res.Merge(oprect)
 			}
+		} else {
+			res = oprect
 		}
 	}
 
-	return [2]float64{minX, minY, maxX, maxY}
+	return res
+}
+
+func GetOperationSliceBoundingBox(ops []*Operation) Rect2 {
+	var res Rect2
+
+	for _, op := range ops {
+		oprect := op.Geometry.GetBoundingBox()
+		if res.HasArea() {
+			if !res.Encloses(oprect) {
+				res = res.Merge(oprect)
+			}
+		} else {
+			res = oprect
+		}
+	}
+
+	return res
 }

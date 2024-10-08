@@ -6,22 +6,19 @@ import (
 
 	nestparser "github.com/029614/gcode_lang/internal/parser/nest"
 	"github.com/029614/gcode_lang/pkg/data"
+	"github.com/Anaxarchus/zero-gdscript/pkg/rect2"
 )
 
 const OnionMinLength = 7.25
 const OnionMinArea = 700.0
+
+type Rect2 = rect2.Rect2
 
 type ToolpathPoint [4]float64
 
 type ToolpathSolution []*ToolpathSheet
 
 type ToolpathSheet []*ToolpathOperation
-
-type ToolpathOperation struct {
-	Operation *data.Operation
-	Instance  []*nestparser.Operation
-	Toolpath  []ToolpathPoint
-}
 
 type PartCategory int
 
@@ -107,12 +104,13 @@ func (to *ToolpathOperation) toolpath() error {
 	}
 }
 
-func getCategory(rect [2]float64) PartCategory {
-	if rect[0]*rect[1] < 150.0 {
+func getCategory(rect Rect2) PartCategory {
+	a := rect.GetArea()
+	if a < 150.0 {
 		return PartCategoryTiny
-	} else if rect[0]*rect[1] < 300.0 || rect[0] < 6.0 || rect[1] < 6.0 {
+	} else if a < 300.0 || rect.Size.X < 6.0 || rect.Size.Y < 6.0 {
 		return PartCategorySmall
-	} else if rect[0]*rect[1] < 700.0 || rect[0] < 7.25 || rect[1] < 7.25 {
+	} else if a < 700.0 || rect.Size.X < 7.25 || rect.Size.Y < 7.25 {
 		return PartCategoryMedium
 	} else {
 		return PartCategoryLarge
@@ -124,7 +122,7 @@ func getRampDistance(angle, height float64) (float64, error) {
 	return 0.0, nil
 }
 
-func shouldOnion(rect [2]float64) bool {
+func shouldOnion(rect Rect2) bool {
 	switch getCategory(rect) {
 	case PartCategoryHuge, PartCategoryLarge:
 		return false
@@ -133,7 +131,7 @@ func shouldOnion(rect [2]float64) bool {
 	}
 }
 
-func shouldDownCut(rect [2]float64) bool {
+func shouldDownCut(rect Rect2) bool {
 	switch getCategory(rect) {
 	case PartCategorySmall, PartCategoryTiny:
 		return true
