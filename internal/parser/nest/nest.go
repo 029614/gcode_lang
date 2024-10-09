@@ -61,7 +61,7 @@ type ArcGeometry struct {
 }
 
 func (ag ArcGeometry) GetBoundingBox() Rect2 {
-	return rect2.Rect2{
+	return Rect2{
 		Position: vector2.New(ag.Position.X-ag.Radius, ag.Position.Y-ag.Radius),
 		Size:     vector2.New(ag.Radius*2, ag.Radius*2),
 	}

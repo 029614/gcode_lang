@@ -3,8 +3,8 @@ package main
 import (
 	"errors"
 
+	"github.com/029614/gcode_lang/internal/data"
 	nestparser "github.com/029614/gcode_lang/internal/parser/nest"
-	"github.com/029614/gcode_lang/pkg/data"
 	"github.com/029614/gcode_lang/pkg/toolpath"
 )
 

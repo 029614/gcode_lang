@@ -1,11 +1,10 @@
 package toolpath
 
 import (
-	"errors"
 	"fmt"
 
+	"github.com/029614/gcode_lang/internal/data"
 	nestparser "github.com/029614/gcode_lang/internal/parser/nest"
-	"github.com/029614/gcode_lang/pkg/data"
 	"github.com/Anaxarchus/zero-gdscript/pkg/rect2"
 )
 
@@ -13,8 +12,6 @@ const OnionMinLength = 7.25
 const OnionMinArea = 700.0
 
 type Rect2 = rect2.Rect2
-
-type ToolpathPoint [4]float64
 
 type ToolpathSolution []*ToolpathSheet
 
@@ -84,23 +81,19 @@ func toolpathSheet(sheet *nestparser.Sheet, data *data.Data) (*ToolpathSheet, er
 }
 
 func (to *ToolpathOperation) toolpath() error {
-	switch to.Operation.Name {
-	case "PartCut":
-		return toolpathPartCut(to)
-	case "BLOCKDRILLSYSTEM":
-		return toolpathBlockDrillSystem(to)
-	case "BLOCKDRILLPILOT":
-		return toolpathBlockDrillPilot(to)
-	case "RABBET2525":
-		return toolpathRabbet(to)
-	case "GROOVE25":
-		return toolpathGroove(to)
-	case "DadoBack":
-		return toolpathDadoBack(to)
-	case "DRAWBOLTS":
-		return toolpathDrawBolts(to)
-	default:
-		return errors.New("invalid operation")
+	if to.Operation.Type == "CUT" {
+		if to.Instance[0].Geometry.(nestparser.ChainGeometry).Closed == 1 {
+
+			return toolpathChain(to, true)
+		} else {
+			return toolpathChain(to, false)
+		}
+	} else if to.Operation.Type == "DRILL" {
+		return toolpathArc(to)
+	} else if to.Operation.Type == "POCKET" {
+		return toolpathPocket(to)
+	} else {
+		return fmt.Errorf("operation type %s not recognized", to.Operation.Type)
 	}
 }
 
