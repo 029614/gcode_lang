@@ -1,9 +1,11 @@
 package toolpath
 
 import (
+	"math"
+
 	"github.com/029614/gcode_lang/internal/data"
 	nestparser "github.com/029614/gcode_lang/internal/parser/nest"
-	"github.com/029614/gcode_lang/internal/polyline"
+	"github.com/029614/gcode_lang/internal/path"
 	"github.com/Anaxarchus/zero-gdscript/pkg/vector2"
 )
 
@@ -32,12 +34,21 @@ func toolpathClosedChain(toolop *ToolpathOperation) error {
 func toolpathChain(toolop *ToolpathOperation, closed bool) error {
 	offset := getCompensation(toolop)
 	paths := getPaths(toolop)
-	for _, path := range paths {
-		err := path.Offset(offset, false)
-		if err != nil {
-			println("error offsetting path in toolpathChain")
-			return err
+	rampDist := getRampIn(toolop)
+	for _, p := range paths {
+
+		// get ramp
+		path := p.Offset(offset, true)
+		if rampDist > 0 {
+			if closed {
+				// ramp in
+			} else {
+				// ramp in
+			}
 		}
+
+		// get rest of path
+
 	}
 	return nil
 }
@@ -50,8 +61,9 @@ func toolpathArc(toolop *ToolpathOperation) error {
 	return nil
 }
 
-func sortPaths(paths []*polyline.Path) []*polyline.Path {
+func sortPaths(paths []*path.Path) []*path.Path {
 	// sort paths by nearest neighbor
+	return nil
 }
 
 func getCompensation(toolop *ToolpathOperation) float64 {
@@ -75,15 +87,24 @@ func getCompensation(toolop *ToolpathOperation) float64 {
 	return 0.0
 }
 
-func getPaths(toolop *ToolpathOperation) []*polyline.Path {
-	pths := make([]*polyline.Path, 0)
+func getPaths(toolop *ToolpathOperation) []*path.Path {
+	pths := make([]*path.Path, 0)
 	for _, ins := range toolop.Instance {
 		var pts [][3]float64
 		for _, pt := range ins.Geometry.(nestparser.ChainGeometry).Points {
 			pts = append(pts, [3]float64{pt.X, pt.Y, pt.Bulge})
 		}
-		path := polyline.NewPathFromBulge(pts, ins.Geometry.(nestparser.ChainGeometry).Closed == 1, 0.1, 64)
+		path := path.NewPathFromBulgePoints(ins.Geometry.(nestparser.ChainGeometry).Closed == 1, pts...)
 		pths = append(pths, path)
 	}
 	return pths
+}
+
+func getRampIn(toolop *ToolpathOperation) float64 {
+
+}
+
+// # Helper function to calculate the ramp length given a height difference and angle
+func getRampLength(to, from, rampRadians float64) float64 {
+	return (from - to) / math.Tan(rampRadians)
 }
