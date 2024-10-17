@@ -1,0 +1,73 @@
+[
+  {
+    "id": "18dd52d6-3cff-4369-9862-c283ac0654aa",
+    "vendors": [
+      "vendor_id_1", 
+      "vendor_id_2"
+    ],
+    "size": {
+      "x": 96.0,
+      "y": 48.0,
+      "z": 0.7
+    },
+    "core": "hardwood ply",
+    "face1": "veneer",
+    "face2": "veneer",
+    "finish_name": "Prefinished Birch",
+    "finish_id": "na",
+    "brand": "Common"
+  },
+  {
+    "id": "f7d4d163-6a0c-4b64-b3b0-f1bdc349bb62",
+    "vendors": [
+      "vendor_id_1", 
+      "vendor_id_2"
+    ],
+    "size": {
+      "x": 96.0,
+      "y": 48.0,
+      "z": 0.7
+    },
+    "core": "hdf",
+    "face1": "veneer",
+    "face2": "veneer",
+    "finish_name": "Prefinished Birch",
+    "finish_id": "na",
+    "brand": "Common"
+  },
+  {
+    "id": "e012e04e-e28c-4a37-a3ac-22e56e5ae62f",
+    "vendors": [
+      "vendor_id_3"
+    ],
+    "size": {
+      "x": 109.84,
+      "y": 48.81,
+      "z": 0.75
+    },
+    "core": "mdf",
+    "face1": "laminate",
+    "face2": "laminate",
+    "finish_name": "Pure Walnut",
+    "finish_id": "S4-PA2S-14",
+    "brand": "Shinnoki"
+  },
+  {
+    "id": "8bf8c6c1-0463-4b7f-b5d7-f1b3e5cd8c57",
+    "vendors": [
+      "vendor_id_1",
+      "vendor_id_4"
+    ],
+    "size": {
+      "x": 97.0,
+      "y": 61.0,
+      "z": 0.75
+    },
+    "core": "mdf",
+    "face1": "melamine",
+    "face2": "melamine",
+    "finish_name": "White Melamine",
+    "finish_id": "na",
+    "brand": "Common"
+  }
+]
